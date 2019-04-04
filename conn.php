@@ -1,9 +1,9 @@
 <?php
  
 //MySQLi Procedural
-$conn = mysqli_connect("localhost","root","","sample");
+$conn = mysqli_connect("rosydbserver.database.windows.net","rosy","@rhosytux18","rosydicodingsubmission");
 if (!$conn) {
-	die("Connection failed: " . mysqli_connect_error());
+	die("Koneksi Gagal: " . mysqli_connect_error());
 }
  
 ?>
