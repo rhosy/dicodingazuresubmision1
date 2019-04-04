@@ -1,6 +1,6 @@
 <?php
 
-$databaseHost = 'rosydbserver.database.windows.net';
+$databaseHost = 'tcp:rosydbserver.database.windows.net,1433';
 $databaseName = 'rosydicodingsubmission';
 $databaseUsername = 'rosy';
 $databasePassword = '@rhosytux18';
