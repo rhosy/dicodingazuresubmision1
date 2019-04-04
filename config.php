@@ -1,13 +1,13 @@
 <?php
 
-$databaseHost = 'localhost';
-$databaseName = 'test';
-$databaseUsername = 'root';
-$databasePassword = 'root';
+$databaseHost = 'rosydbserver.database.windows.net';
+$databaseName = 'rosydicodingsubmission';
+$databaseUsername = 'rosy';
+$databasePassword = '@rhosytux18';
 
 try {
 	// http://php.net/manual/en/pdo.connections.php
-	$dbConn = new PDO("mysql:host={$databaseHost};dbname={$databaseName}", $databaseUsername, $databasePassword);
+	$dbConn = new PDO("sqlsrv:server={$databaseHost};dbname={$databaseName}", $databaseUsername, $databasePassword);
 	
 	$dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Setting Error Mode as Exception
 	// More on setAttribute: http://php.net/manual/en/pdo.setattribute.php
