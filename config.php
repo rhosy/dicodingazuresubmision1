@@ -12,7 +12,8 @@ try {
 	$dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Setting Error Mode as Exception
 	// More on setAttribute: http://php.net/manual/en/pdo.setattribute.php
 } catch(PDOException $e) {
-	echo $e->getMessage();
+	print("Error connecting to SQL Server.");
+    die(print_r($e));
 }
  
 ?>
