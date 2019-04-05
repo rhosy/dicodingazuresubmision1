@@ -9,13 +9,16 @@
 include_once("config.php");
 
 if(isset($_POST['Submit'])) {	
+	$id = $_POST['id'];
 	$name = $_POST['name'];
 	$age = $_POST['age'];
 	$email = $_POST['email'];
 		
 	// checking empty fields
-	if(empty($name) || empty($age) || empty($email)) {
-				
+	if(empty($id) || empty($name) || empty($age) || empty($email)) {
+		if(empty($id)) {
+			echo "<font color='red'>Id field is empty.</font><br/>";
+		}		
 		if(empty($name)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
 		}
@@ -34,9 +37,10 @@ if(isset($_POST['Submit'])) {
 		// if all the fields are filled (not empty) 
 			
 		//insert data to database		
-		$sql = "INSERT INTO user(name, age, email) VALUES(:name, :age, :email)";
+		$sql = "INSERT INTO user(id, name, age, email) VALUES(id, :name, :age, :email)";
 		$query = $dbConn->prepare($sql);
-				
+		
+		$query->bindparam(':id', $id);
 		$query->bindparam(':name', $name);
 		$query->bindparam(':age', $age);
 		$query->bindparam(':email', $email);
