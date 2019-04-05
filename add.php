@@ -34,7 +34,7 @@ if(isset($_POST['Submit'])) {
 		// if all the fields are filled (not empty) 
 			
 		//insert data to database		
-		$sql = "INSERT INTO users(name, age, email) VALUES(:name, :age, :email)";
+		$sql = "INSERT INTO user(name, age, email) VALUES(:name, :age, :email)";
 		$query = $dbConn->prepare($sql);
 				
 		$query->bindparam(':name', $name);
